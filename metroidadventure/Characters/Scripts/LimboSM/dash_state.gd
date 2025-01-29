@@ -30,11 +30,3 @@ func process_physics(_delta: float) -> void:
 func dash() -> void:
 	blue_player.velocity.x = PlayerStats.DASH_SPEED * get_direction()
 	blue_player.velocity.y = 0
-
-func _printThings():
-	prints("-----------------")
-	prints("gravity " + str(blue_player.gravity))
-	prints("velocity.y " + str(blue_player.velocity.y))
-	prints("velocity.x " + str(blue_player.velocity.x))
-	prints("timer: " + str(timer))
-	prints(blackboard.get_var(BBNames.direction_var))

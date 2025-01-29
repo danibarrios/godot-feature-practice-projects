@@ -1571,6 +1571,8 @@ animation_name = &"dash"
 
 [node name="AttackState" type="LimboState" parent="LimboStateMachine"]
 script = ExtResource("42_obgkh")
+attack_2 = &"sword_2"
+attack_3 = &"sword_3"
 animation_name = &"sword_1"
 
 [node name="LabelState" type="Label" parent="." node_paths=PackedStringArray("limbo_hsm")]
