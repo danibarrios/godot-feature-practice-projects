@@ -1,8 +1,9 @@
-[gd_scene load_steps=171 format=3 uid="uid://cp3ghd4q4bxyl"]
+[gd_scene load_steps=173 format=3 uid="uid://cp3ghd4q4bxyl"]
 
 [ext_resource type="Script" path="res://scripts/Characters/main_characters/blue_player/blue_player_controller.gd" id="1_uvpg8"]
 [ext_resource type="Script" path="res://scripts/Characters/main_characters/blue_player/facing.gd" id="2_eqcov"]
 [ext_resource type="Texture2D" uid="uid://cnrv3jo4lrpsy" path="res://assests/characters/Player/StickFigure/sticky_fighter_dash_128x128.png" id="2_mc5c8"]
+[ext_resource type="Script" path="res://scripts/Characters/main_characters/player_stats.gd" id="2_tuucy"]
 [ext_resource type="Texture2D" uid="uid://uvt8yrqw6n7x" path="res://assests/characters/Player/BlueGuy/Dash (32x32).png" id="3_2nev5"]
 [ext_resource type="Texture2D" uid="uid://bhsewbytcexiu" path="res://assests/characters/Player/BlueGuy/Wall Jump (32x32).png" id="3_bcsmu"]
 [ext_resource type="Texture2D" uid="uid://dapnbnt5liyg8" path="res://assests/characters/Player/StickFigure/sticky_fighter_attack_1_128x128.png" id="3_naacf"]
@@ -42,6 +43,10 @@
 [ext_resource type="Texture2D" uid="uid://bx6jjqclu8sry" path="res://assests/characters/Player/StickFigure/sword_combo_10_128x128.png" id="43_mtndb"]
 [ext_resource type="Texture2D" uid="uid://bhincnpakjyxi" path="res://assests/characters/Player/StickFigure/sword_combo_11_128x128.png" id="44_6u4eh"]
 [ext_resource type="AudioStream" uid="uid://bwsdsqngybd1s" path="res://assests/sounds/sword_attack.mp3" id="57_osxh7"]
+
+[sub_resource type="Resource" id="Resource_gbkvn"]
+script = ExtResource("2_tuucy")
+RUN_SPEED = 300.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_am5jy"]
 atlas = ExtResource("3_naacf")
@@ -1329,6 +1334,7 @@ _data = {
 collision_layer = 2
 script = ExtResource("1_uvpg8")
 animations = NodePath("Facing/PlayerAnimatedSprite2D")
+stats = SubResource("Resource_gbkvn")
 
 [node name="Facing" type="Node2D" parent="."]
 script = ExtResource("2_eqcov")
