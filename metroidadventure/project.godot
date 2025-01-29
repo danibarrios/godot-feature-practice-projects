@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="MetroidAdventure"
-run/main_scene="res://Scene/dummy_level.tscn"
+run/main_scene="res://scenes/levels/dummy_level.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://assests/sounds/default_bus_layout.tres"
 
 [display]
 
