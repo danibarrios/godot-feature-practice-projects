@@ -40,3 +40,4 @@ func _binding_setup():
 	
 	#ATTACK_STATE possible transitions
 	add_transition(states[StateReferences.ATTACK_STATE], states[StateReferences.IDLE_STATE], StateReferences.STOPPED)
+	add_transition(states[StateReferences.ATTACK_STATE], states[StateReferences.ATTACK_STATE], StateReferences.ATTACKING)
