@@ -35,8 +35,11 @@ func has_player_attacked() -> bool:
 	return blackboard.get_var(BBNames.attack_var)
 
 func get_direction() -> int:
-	var vel_x = blackboard.get_var(BBNames.direction_var)
-	return -1 if abs(vel_x) != vel_x else 1
+	var vel_x: float = blackboard.get_var(BBNames.direction_var)
+	if is_zero_approx(vel_x):
+		return blue_player.scale.x
+	else:
+		return -1 if abs(vel_x) != vel_x else 1
 
 func process_physics(delta: float) -> void:
 	blue_player.velocity.y += blue_player.gravity * delta

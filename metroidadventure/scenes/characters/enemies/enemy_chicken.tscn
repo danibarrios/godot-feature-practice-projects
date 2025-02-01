@@ -1,9 +1,10 @@
-[gd_scene load_steps=50 format=3 uid="uid://d1k177l5j0sgl"]
+[gd_scene load_steps=52 format=3 uid="uid://d1k177l5j0sgl"]
 
 [ext_resource type="Script" path="res://scripts/Characters/enemies/enemy_chicken.gd" id="1_v52ug"]
 [ext_resource type="Texture2D" uid="uid://bva46arbncmnt" path="res://assests/characters/Enemy/chicken/Hit (32x34).png" id="2_8ajd3"]
 [ext_resource type="Texture2D" uid="uid://bhiuja06nnupx" path="res://assests/characters/Enemy/chicken/Idle (32x34).png" id="3_h6802"]
 [ext_resource type="Texture2D" uid="uid://dd33hi1fijfw2" path="res://assests/characters/Enemy/chicken/Run (32x34).png" id="4_wc4h7"]
+[ext_resource type="BehaviorTree" uid="uid://bwbsq8hb8s3c7" path="res://scripts/Characters/enemies/chicken/chicken_behavior_tree.tres" id="5_cak0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7w4w"]
 atlas = ExtResource("2_8ajd3")
@@ -337,17 +338,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0l5v"]
 size = Vector2(24, 23)
 
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_jf04n"]
+
 [node name="enemy_chicken" type="CharacterBody2D"]
 script = ExtResource("1_v52ug")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_cnnta")
-animation = &"run"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.802198
+frame_progress = 0.906136
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1.5)
 shape = SubResource("RectangleShape2D_u0l5v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+behavior_tree = ExtResource("5_cak0r")
+blackboard_plan = SubResource("BlackboardPlan_jf04n")

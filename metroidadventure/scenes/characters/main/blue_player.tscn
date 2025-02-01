@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=3 uid="uid://cp3ghd4q4bxyl"]
+[gd_scene load_steps=179 format=3 uid="uid://cp3ghd4q4bxyl"]
 
 [ext_resource type="Script" path="res://scripts/Characters/main_characters/blue_player/blue_player_controller.gd" id="1_uvpg8"]
 [ext_resource type="Script" path="res://scripts/Characters/main_characters/blue_player/facing.gd" id="2_eqcov"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cge65ul4efjs1" path="res://assests/characters/Player/BlueGuy/Fall (32x32).png" id="5_un4bn"]
 [ext_resource type="Texture2D" uid="uid://tdhji7n7jxsb" path="res://assests/characters/Player/BlueGuy/Hit (32x32).png" id="6_eww3q"]
 [ext_resource type="Texture2D" uid="uid://d2dadvy2dihrm" path="res://assests/characters/Player/BlueGuy/Idle (32x32).png" id="7_38qse"]
+[ext_resource type="Texture2D" uid="uid://criuef6w0cpw3" path="res://assests/characters/Player/StickFigure/sticky_fighter_dash_2_128x128.png" id="8_g1ncq"]
 [ext_resource type="Texture2D" uid="uid://djjl8dscm1g0q" path="res://assests/characters/Player/BlueGuy/Jump (32x32).png" id="8_pte1j"]
 [ext_resource type="Texture2D" uid="uid://b8hqpba70ap0q" path="res://assests/characters/Player/StickFigure/sticky_fighter_idle_128x128.png" id="8_sahbe"]
 [ext_resource type="Texture2D" uid="uid://jitl3eg7hx4k" path="res://assests/characters/Player/BlueGuy/Run (32x32).png" id="9_op8ur"]
@@ -142,6 +143,30 @@ region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_reat0"]
 atlas = ExtResource("2_mc5c8")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hve50"]
+atlas = ExtResource("8_g1ncq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktde6"]
+atlas = ExtResource("8_g1ncq")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl3yn"]
+atlas = ExtResource("8_g1ncq")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kikji"]
+atlas = ExtResource("8_g1ncq")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkpx1"]
+atlas = ExtResource("8_g1ncq")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we6nd"]
+atlas = ExtResource("8_g1ncq")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrqdv"]
@@ -608,6 +633,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_hve50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktde6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl3yn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kikji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkpx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we6nd")
+}],
+"loop": false,
+"name": &"dash_2",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_hrqdv")
 }],
 "loop": true,
@@ -968,10 +1016,6 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jvc1"]
-radius = 2.00001
-height = 26.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y1hnk"]
 radius = 14.0
 height = 42.0
@@ -1052,42 +1096,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0, 1, 2, 3, 4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Facing/PunchArea/CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(22, -10), Vector2(27, -11), Vector2(35, -12), Vector2(39, -12), Vector2(54, -12), Vector2(54, -12)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Facing/PunchArea/CollisionShape2D:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Facing/PunchArea/CollisionShape2D:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_h0gke"]
@@ -1342,17 +1350,9 @@ script = ExtResource("2_eqcov")
 [node name="PlayerAnimatedSprite2D" type="AnimatedSprite2D" parent="Facing"]
 position = Vector2(6, -24)
 sprite_frames = SubResource("SpriteFrames_1mve4")
-animation = &"sword_3"
+animation = &"dash_2"
 autoplay = "idle"
 frame = 3
-
-[node name="PunchArea" type="Area2D" parent="Facing"]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Facing/PunchArea"]
-position = Vector2(22, -10)
-rotation = 1.57079
-shape = SubResource("CapsuleShape2D_1jvc1")
 
 [node name="SwordArea" type="Area2D" parent="Facing"]
 
@@ -1395,7 +1395,7 @@ animation_name = &"fall"
 
 [node name="DashState" type="LimboState" parent="LimboStateMachine"]
 script = ExtResource("15_pu5h6")
-animation_name = &"dash"
+animation_name = &"dash_2"
 
 [node name="AttackState" type="LimboState" parent="LimboStateMachine"]
 script = ExtResource("42_obgkh")
