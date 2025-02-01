@@ -12,7 +12,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta: float) -> void:
-	facing.face_proper_direction(velocity.x)
+	facing.face_proper_direction(self.velocity.x)
 	if state_machine:
 		state_machine.get_active_state().process_physics(delta)
 	
